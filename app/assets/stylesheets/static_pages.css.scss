@@ -1,9 +1,12 @@
 @import url(http://fonts.googleapis.com/css?family=Lato:300);
 
 body {
+  margin-top: 0;
   font-family: 'Lato';
   color: #333;
 }
+
+a { text-decoration: none; }
 
 .container {
   @include outer-container;
@@ -49,6 +52,33 @@ body {
   }
 }
 
-.entypo {
-  font-family: "entypo";
+.header-links {
+  i {
+    padding-left: 5px;
+  }
 }
+
+a i { 
+  color: #333;
+  text-decoration: none;
+}
+
+i { 
+  font-family: 'entypo';
+  font-size: 3.5em;
+  font-style: normal;
+
+  &:hover {
+    color: #444;
+  }
+
+  &:active {
+    color: #999;
+  }
+}
+
+i.sign-in { float: right; }
+i.sign-in:before { content: "\E740"; }
+
+i.home { float: right; }
+i.home:before { content: "\2302"; }

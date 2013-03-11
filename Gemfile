@@ -5,6 +5,7 @@ gem 'haml'
 gem 'haml-rails'
 gem 'bourbon'
 gem 'neat'
+gem 'entypo-rails'
 
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'

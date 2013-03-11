@@ -13,5 +13,9 @@ describe "Static pages" do
     it "should have a link to get started" do
       page.should have_link "Get started"
     end
+
+    it "should have a link to sign in" do
+      page.should have_selector 'a', class: "sign-in"
+    end
   end
 end
