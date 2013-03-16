@@ -1,0 +1,14 @@
+%h1 Sign in
+
+.form
+  = form_tag sessions_path do
+    .field
+      .field-label
+        = label_tag :email
+      = email_field_tag :email
+    .field
+      .field-label
+        = label_tag :password
+      = password_field_tag :password
+    .form-actions
+      = submit_tag "Sign in", class: "btn btn-primary"

@@ -2,7 +2,11 @@
   .header-left
     = link_to "Streakes", root_path, class: "header-logo"
   .header-right
-    = link_to root_path, class: "home" do
+    = link_to root_path, class: "home", title: "Home" do
       %i.home
-    = link_to "#", class: "sign-in" do
-      %i.sign-in
+    - if signed_in?
+      = link_to signout_path, method: "delete", class: "sign-out", title: "Sign out" do
+        %i.sign-out
+    - else
+      = link_to signin_path, class: "sign-in", title: "Sign in" do
+        %i.sign-in

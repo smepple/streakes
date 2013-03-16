@@ -17,6 +17,8 @@ i {
   }
 }
 
+i.home:before { content: "\2302"; }
+
 i.sign-in:before { content: "\E740"; }
 
-i.home:before { content: "\2302"; }
+i.sign-out:before { content: "\E741"; }

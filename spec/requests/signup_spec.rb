@@ -33,7 +33,7 @@ describe "Signup Flow" do
 
         before { click_button submit }
 
-        it "should display error messages" do
+        specify "error messages should be displayed" do
           page.should have_selector "li.error-message", text: "can't be blank"
         end
       end
@@ -54,7 +54,7 @@ describe "Signup Flow" do
 
         before { click_button submit }
 
-        it "should redirect to the user profile page" do
+        specify "user should be taken to the user profile page" do
           page.should have_content "user@example.com"
         end
       end
