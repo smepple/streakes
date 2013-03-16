@@ -1,0 +1,22 @@
+a i { 
+  color: #333;
+  text-decoration: none;
+}
+
+i { 
+  font-family: 'entypo';
+  font-size: 3.5em;
+  font-style: normal;
+
+  &:hover {
+    color: #444;
+  }
+
+  &:active {
+    color: #999;
+  }
+}
+
+i.sign-in:before { content: "\E740"; }
+
+i.home:before { content: "\2302"; }

@@ -1,0 +1,18 @@
+@import url(http://fonts.googleapis.com/css?family=Lato:300,700);
+
+body {
+  font-family: "Lato";
+  color: #333;
+}
+
+a { 
+  text-decoration: none;
+  &:active { color: #999; }
+}
+
+.logo {
+  font-size: 4em;
+  font-weight: 300;
+  font-variant: small-caps;
+  line-height: 1em;
+}

@@ -1,0 +1,19 @@
+- if object.errors.any?
+  / This is a really convoluted way of getting error messages to read out in nice plain English
+  - num_errors = object.errors.count
+  - num_errors_to_words = I18n.with_locale(:en) { num_errors.to_words }
+  - error_string = pluralize(num_errors, "error")
+  - error_string_to_array = error_string.split
+  - error_word = error_string_to_array[1]
+
+  .alert-block
+    %p
+      Oops,
+      - if object.errors.count == 1
+        there's
+        = "#{num_errors_to_words} #{error_word}:"
+      - else
+        there're
+        = "#{num_errors_to_words} #{error_word}:"
+    - object.errors.full_messages.each do |msg|
+      %li.error-message= msg

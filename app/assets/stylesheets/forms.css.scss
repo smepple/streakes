@@ -1,0 +1,24 @@
+.form {
+  margin: 20px 0;
+}
+
+.field {
+  margin-bottom: 10px;
+}
+
+.field-label {
+  font-size: .8em;
+  font-weight: 700;
+}
+
+input {
+  font-family: 'Lato';
+  color: #333;
+  font-size: 1em;
+}
+
+input[type="submit"] {
+  &:hover {
+    cursor: pointer;
+  }
+}

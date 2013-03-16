@@ -1,0 +1,18 @@
+%h1 Create an account
+
+.intro
+  %em Sign up to start your next Streak
+
+.form
+  = form_for @user do |f|
+    = render "shared/error_messages", object: f.object
+    .field
+      .field-label
+        = f.label :email
+      = f.email_field :email
+    .field
+      .field-label
+        = f.label :password
+      = f.password_field :password
+    .form-actions
+      = f.submit "Create account", class: "btn btn-primary"

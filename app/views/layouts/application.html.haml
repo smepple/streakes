@@ -8,4 +8,11 @@
   
   %body
     .container
-      = yield
+
+      = render "shared/header"
+
+      .inner-container
+
+        = render "shared/flash_messages"
+
+        = yield

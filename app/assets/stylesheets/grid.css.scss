@@ -1,0 +1,8 @@
+.container {
+  padding-top: 80px;
+  @include outer-container;
+}
+
+.inner-container {
+  @include span-columns(12);
+}

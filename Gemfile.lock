@@ -28,7 +28,15 @@ GEM
     activesupport (3.2.12)
       i18n (~> 0.6)
       multi_json (~> 1.0)
+    annotate (2.5.0)
+      rake
     arel (3.0.2)
+    bcrypt-ruby (3.0.1)
+    better_errors (0.7.2)
+      coderay (>= 1.0.0)
+      erubis (>= 2.6.6)
+    binding_of_caller (0.7.1)
+      debug_inspector (>= 0.0.1)
     bourbon (3.1.1)
       sass (>= 3.2.0)
       thor
@@ -42,6 +50,7 @@ GEM
       xpath (~> 0.1.4)
     childprocess (0.3.9)
       ffi (~> 1.0, >= 1.0.11)
+    coderay (1.0.9)
     coffee-rails (3.2.2)
       coffee-script (>= 2.2.0)
       railties (~> 3.2.0)
@@ -49,6 +58,7 @@ GEM
       coffee-script-source
       execjs
     coffee-script-source (1.6.1)
+    debug_inspector (0.0.2)
     diff-lcs (1.1.3)
     entypo-rails (1.0.2)
       railties (~> 3.1)
@@ -74,17 +84,25 @@ GEM
       i18n (>= 0.4.0)
       mime-types (~> 1.16)
       treetop (~> 1.4.8)
+    meta_request (0.2.2)
+      rack-contrib
+      railties
     mime-types (1.21)
-    multi_json (1.6.1)
+    multi_json (1.7.0)
     neat (1.2.0)
       bourbon (>= 2.1)
       sass (>= 3.2)
     nokogiri (1.5.6)
+    numbers_and_words (0.5.0)
+      activesupport
+      i18n
     pg (0.14.1)
     polyglot (0.3.3)
     rack (1.4.5)
     rack-cache (1.2)
       rack (>= 0.4)
+    rack-contrib (1.1.0)
+      rack (>= 0.9.1)
     rack-ssl (1.3.3)
       rack
     rack-test (0.6.2)
@@ -142,7 +160,7 @@ GEM
     treetop (1.4.12)
       polyglot
       polyglot (>= 0.3.1)
-    tzinfo (0.3.36)
+    tzinfo (0.3.37)
     uglifier (1.3.0)
       execjs (>= 0.3.0)
       multi_json (~> 1.0, >= 1.0.2)
@@ -154,6 +172,10 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  annotate
+  bcrypt-ruby
+  better_errors
+  binding_of_caller
   bourbon
   capybara (= 1.1.2)
   coffee-rails (~> 3.2.1)
@@ -161,7 +183,9 @@ DEPENDENCIES
   haml
   haml-rails
   jquery-rails
+  meta_request
   neat
+  numbers_and_words
   pg
   rails (= 3.2.12)
   rspec-rails (= 2.11.0)
