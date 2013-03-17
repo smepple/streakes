@@ -8,6 +8,7 @@ Streakes::Application.routes.draw do
 
   resources :users
   resources :sessions, only: [:new, :create, :destroy]
+  resources :goals
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

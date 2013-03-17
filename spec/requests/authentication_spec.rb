@@ -32,7 +32,7 @@ describe "Authentication" do
         end
 
         it "should display error messages" do
-          page.should have_selector ".alert-error", text: "Invalid"
+          page.should have_selector ".flash-error", text: "Invalid"
         end
       end
     end

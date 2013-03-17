@@ -1,1 +1,17 @@
-= @user.email
+= "Signed in as #{@user.email}"
+
+%h1 Goals
+
+- if @goals.any?
+  %p= "You've added #{pluralize(@user.goals.count, "goal")}:"
+
+  %ul
+    - @goals.each do |goal|
+      = div_for goal do
+        %li.goal-description= link_to goal.description, goal
+- else
+  %p
+    %em You haven't made any goals yet
+
+.actions
+  = link_to "Add a goal", new_goal_path, class: "btn btn-primary"

@@ -6,8 +6,8 @@
   - error_string_to_array = error_string.split
   - error_word = error_string_to_array[1]
 
-  .alert-block
-    %p
+  .error-block
+    .error-header
       Oops,
       - if object.errors.count == 1
         there's

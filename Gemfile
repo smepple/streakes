@@ -13,6 +13,7 @@ gem 'numbers_and_words'
 group :development, :test do
   gem 'sqlite3'
   gem 'rspec-rails', '2.11.0'
+  gem 'factory_girl_rails'
 end
 
 group :assets do
@@ -30,7 +31,6 @@ end
 
 group :test do
   gem 'capybara', '1.1.2'
-  gem 'factory_girl_rails'
 end
 
 group :production do

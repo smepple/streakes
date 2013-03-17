@@ -1,3 +1,48 @@
-.alert-block {
-  margin: 20px 0;
+/* Error Messages */
+
+.error-block {
+  display: inline-block;
+  margin-bottom: 20px;
+  padding: 10px;
+  background-color: #c60f13;
+  border: 1px solid #970b0e;
+  opacity: .8;
+  border-radius: 2px;
+  color: #FFF;
+}
+
+.error-header {
+  margin-bottom: 10px;
+  font-size: 1.2em;
+}
+
+li.error-message {
+  list-style: none;
+  margin-top: 5px;
+}
+
+/* Flash Messages */
+
+.flash {
+  display: inline-block;
+  border-radius: 2px;
+  padding: 10px;
+  position: fixed;
+  top: 10%;
+  right: 50%;
+  margin-right: -100px;
+}
+
+.flash-success {
+  background-color: #5da423;
+  border: 1px solid #457a1a;
+  opacity: .8;
+  color: #FFF;
+}
+
+.flash-error {
+  background-color: #c60f13;
+  border: 1px solid #970b0e;
+  opacity: .8;
+  color: #FFF;
 }
