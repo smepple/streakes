@@ -1,9 +1,9 @@
-= "Signed in as #{@user.email}"
+/ = "Signed in as #{@user.email}"
 
 %h1 Goals
 
 - if @goals.any?
-  %p= "You've added #{pluralize(@user.goals.count, "goal")}:"
+  %h3= "You've added #{pluralize(@user.goals.count, "goal")}:"
 
   %ul
     - @goals.each do |goal|
