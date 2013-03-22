@@ -1,4 +1,6 @@
 class GoalsController < ApplicationController
+  before_filter :correct_user, only: [:destroy]
+
   def new
     @goal = current_user.goals.new
   end
@@ -28,4 +30,12 @@ class GoalsController < ApplicationController
       render "show"
     end
   end
+
+  private
+
+    def correct_user
+      @goal = Goal.find(params[:id])
+      @user = User.find(@goal.user_id)
+      redirect_to current_user, notice: "Access denied" unless current_user?(@user)
+    end
 end

@@ -1,6 +1,6 @@
 source 'https://rubygems.org'
 
-gem 'rails', '3.2.12'
+gem 'rails', '3.2.13'
 gem 'bcrypt-ruby'
 gem 'jquery-rails'
 gem 'haml'
@@ -31,6 +31,7 @@ end
 
 group :test do
   gem 'capybara', '1.1.2'
+  gem 'launchy'
 end
 
 group :production do

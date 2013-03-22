@@ -58,7 +58,7 @@ describe "Goals" do
 
   describe "viewing goals" do
 
-    let(:goal) { FactoryGirl.create(:goal) }
+    let(:goal) { FactoryGirl.create(:goal, user: user) }
 
     before { visit user_path(goal.user) }
 
@@ -87,25 +87,45 @@ describe "Goals" do
 
   describe "deleting a goal" do
 
-    let(:goal) { FactoryGirl.create(:goal) }
+    let(:goal_owner) { FactoryGirl.create(:user) }
+    let(:goal) { FactoryGirl.create(:goal, user: goal_owner) }
 
-    before { visit goal_path(goal) }
+    describe "as the wrong user" do
 
-    it "should delete the goal" do
-      expect { click_link "Delete goal" }.to change(Goal, :count).by(-1)
+      before { visit goal_path(goal) }
+
+      specify "page should not display delete button" do
+        page.should_not have_link "Delete goal"
+      end
     end
 
-    describe "after successfully deleting a goal" do
+    describe "as the right user" do
 
-      before { click_link "Delete goal" }
-
-      specify "user should be taken to the user profile page" do
-        page.should have_selector "h1", text: "Goals"
-        page.should_not have_content goal.description
+      before do
+        visit signin_path
+        fill_in "Email", with: goal_owner.email
+        fill_in "Password", with: goal_owner.password
+        click_button "Sign in"
+        visit goal_path(goal)
+        save_and_open_page
       end
 
-      specify "a success message should be displayed" do
-        page.should have_selector ".flash-success", text: "deleted"
+      it "should delete the goal" do
+        expect { click_link "Delete goal" }.to change(Goal, :count).by(-1)
+      end
+
+      describe "after successfully deleting a goal" do
+
+        before { click_link "Delete goal" }
+
+        specify "user should be taken to the user profile page" do
+          page.should have_selector "h1", text: "Goals"
+          page.should_not have_content goal.description
+        end
+
+        specify "a success message should be displayed" do
+          page.should have_selector ".flash-success", text: "deleted"
+        end
       end
     end
   end
