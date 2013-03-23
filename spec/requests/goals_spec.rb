@@ -79,6 +79,10 @@ describe "Goals" do
         page.should have_selector "h1", text: goal.description
       end
 
+      it "should display option to add a target" do
+        page.should have_link "Add a target"
+      end
+
       it "should display a link to delete the goal" do
         page.should have_link "Delete goal"
       end
@@ -107,7 +111,6 @@ describe "Goals" do
         fill_in "Password", with: goal_owner.password
         click_button "Sign in"
         visit goal_path(goal)
-        save_and_open_page
       end
 
       it "should delete the goal" do

@@ -1,0 +1,6 @@
+%h1= @target.description
+
+%h3= "Goal: #{@target.goal.description}"
+
+- if current_user?(@target.goal.user)
+  = link_to "Delete target", @target, method: :delete, class: "btn"

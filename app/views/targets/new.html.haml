@@ -1,0 +1,13 @@
+%h1 Add a target
+
+.form
+  = form_for @target do |f|
+    = render "shared/error_messages", object: f.object
+    .field
+      .field-label
+        = f.label :description
+      = f.text_field :description
+    .field
+      = f.hidden_field :goal_id, value: params[:goal]
+    .form-actions
+      = f.submit "Add target", class: "btn btn-primary"

@@ -1,4 +1,21 @@
 %h1= @goal.description
 
+%p Targets are how you plan to get to your goal
+
+- if @goal.targets.any?
+  %h3= "You've added #{pluralize(@goal.targets.count, "target")}:"
+
+  %ul.targets
+    - @goal.targets.each do |target|
+      = div_for target do
+        %li.target-description= link_to target.description, target
+- else
+  .empty
+    %p 
+      %em You haven't added any targets
+
+- if current_user?(@goal.user)
+  = link_to "Add a target", new_target_path(goal: @goal), class: "btn btn-primary"
+
 - if current_user?(@goal.user)
   = link_to "Delete goal", @goal, method: :delete, class: "btn"

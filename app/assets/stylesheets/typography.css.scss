@@ -10,6 +10,12 @@ a {
   &:active { color: #999; }
 }
 
+li a {
+  color: #333;
+  &:hover { color: #777; }
+  &:active { color: #999; }
+}
+
 .logo {
   font-size: 4em;
   font-weight: 300;

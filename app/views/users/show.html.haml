@@ -2,13 +2,15 @@
 
 %h1 Goals
 
+%p Goals are things you want to accomplish
+
 - if @goals.any?
   %h3= "You've added #{pluralize(@user.goals.count, "goal")}:"
 
-  %ul
+  %ul.goals
     - @goals.each do |goal|
       = div_for goal do
-        %li.goal-description= link_to goal.description, goal
+        %li.goal-description= link_to "#{goal.description} (#{goal.targets.count} targets)", goal
 - else
   %p
     %em You haven't made any goals yet
