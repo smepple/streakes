@@ -13,7 +13,7 @@ class Goal < ActiveRecord::Base
   attr_accessible :description
 
   belongs_to :user
-  has_many :targets
+  has_many :targets, dependent: :destroy
 
   validates_presence_of :user_id, :description
 end

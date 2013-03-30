@@ -8,7 +8,7 @@
   %ul.targets
     - @goal.targets.each do |target|
       = div_for target do
-        %li.target-description= link_to target.description, target
+        %li.target-description= link_to "#{target.description} (#{pluralize(target.events.count, "event")})", target
 - else
   .empty
     %p 

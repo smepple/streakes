@@ -20,6 +20,7 @@ describe Target do
   it { should respond_to :goal_id }
   it { should respond_to :description }
   it { should respond_to :goal }
+  it { should respond_to :events }
 
   it { should be_valid }
 

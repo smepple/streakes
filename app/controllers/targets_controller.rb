@@ -38,5 +38,5 @@ class TargetsController < ApplicationController
       @target = Target.find(params[:id])
       @user = User.find(@target.goal.user_id)
       redirect_to current_user, notice: "Access denied" unless current_user?(@user)
-    end  
+    end
 end

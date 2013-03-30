@@ -10,10 +10,11 @@
   %ul.goals
     - @goals.each do |goal|
       = div_for goal do
-        %li.goal-description= link_to "#{goal.description} (#{goal.targets.count} targets)", goal
+        %li.goal-description= link_to "#{goal.description} (#{pluralize(goal.targets.count, "target")})", goal
 - else
-  %p
-    %em You haven't made any goals yet
+  .empty
+    %p
+      %em You haven't made any goals yet
 
 .actions
   = link_to "Add a goal", new_goal_path, class: "btn btn-primary"

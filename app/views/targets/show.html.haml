@@ -1,6 +1,29 @@
 %h1= @target.description
 
-%h3= "Goal: #{@target.goal.description}"
+%h3= link_to "Goal: #{@target.goal.description}", @target.goal
+
+%p Events are things you've done to achieve your target
+
+- if @target.events.any?
+  %h3= "You've recorded #{pluralize(@target.events.count, "event")}:"
+
+  %ul.events
+    - @target.events.each do |event|
+      = div_for event do
+        %li.event-description
+          = link_to event do
+            = event.description
+            on
+            = event.completed_at.strftime("%B")
+            = event.completed_at.strftime("%e").to_i.ordinalize
+            = event.completed_at.strftime(", %Y")
+- else
+  .empty
+    %p 
+      %em You haven't recorded any events
+
+- if current_user?(@target.goal.user)
+  = link_to "Record an event", new_event_path(target: @target), class: "btn btn-primary"
 
 - if current_user?(@target.goal.user)
   = link_to "Delete target", @target, method: :delete, class: "btn"

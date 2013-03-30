@@ -13,6 +13,7 @@ class Target < ActiveRecord::Base
   attr_accessible :goal_id, :description
 
   belongs_to :goal
+  has_many :events, dependent: :destroy
 
   validates_presence_of :goal_id, :description
 end

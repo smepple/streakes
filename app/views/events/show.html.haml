@@ -1,0 +1,12 @@
+%h1= @event.description
+%em
+  = @event.completed_at.strftime("%B")
+  = @event.completed_at.strftime("%e").to_i.ordinalize
+  = @event.completed_at.strftime(", %Y")
+
+%h3= link_to "Target: #{@event.target.description}", @event.target
+
+%h4= link_to "Goal: #{@event.target.goal.description}", @event.target.goal
+
+- if current_user?(@event.target.goal.user)
+  = link_to "Delete event", @event, method: :delete, class: "btn"
