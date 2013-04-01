@@ -9,7 +9,7 @@
   %body
     .container
 
-      = render "shared/header"
+      = render "shared/header" unless controller_name == 'static_pages'
 
       .inner-container
 

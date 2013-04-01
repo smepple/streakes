@@ -7,7 +7,7 @@ gem 'haml'
 gem 'haml-rails'
 gem 'bourbon'
 gem 'neat'
-gem 'entypo-rails'
+gem 'font-awesome-rails'
 gem 'numbers_and_words'
 
 group :development, :test do

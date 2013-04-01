@@ -1,12 +1,6 @@
 a i { 
   color: #333;
   text-decoration: none;
-}
-
-i { 
-  font-family: 'entypo';
-  font-size: 3.5em;
-  font-style: normal;
 
   &:hover {
     color: #444;
@@ -17,8 +11,23 @@ i {
   }
 }
 
-i.home:before { content: "\2302"; }
+i {
+  padding: 5px 5px 0 5px;
+}
 
-i.sign-in:before { content: "\E740"; }
+i.large {
+  font-size: 2.2em;
+  font-style: normal;
+}
 
-i.sign-out:before { content: "\E741"; }
+i.small {
+  font-size: 1em;
+}
+
+i.medium {
+  font-size: 1em;
+}
+
+i.large {
+  font-size: 1.5em;
+}

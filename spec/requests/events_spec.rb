@@ -102,7 +102,7 @@ describe "Events" do
       end
 
       it "should display the goal the event's target relates to" do
-        page.should have_selector "h4", text: event.target.goal.description
+        page.should have_selector "h3", text: event.target.goal.description
       end
 
       it "should display a link to delete the event" do

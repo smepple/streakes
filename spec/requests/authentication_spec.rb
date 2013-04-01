@@ -54,7 +54,7 @@ describe "Authentication" do
         end
 
         specify "signout link should be displayed in the header" do
-          page.should have_selector "i.sign-out"
+          page.should have_link "Sign out"
         end
       end
     end
@@ -79,8 +79,13 @@ describe "Authentication" do
         page.should have_link "Get started"
       end
 
-      specify "signin link should be displayed in the header" do
-        page.should have_selector "i.sign-in"
+      describe "visiting another page" do
+
+        before { visit signup_path }
+
+        specify "signin link should be displayed in the header" do
+          page.should have_link "Sign in"
+        end
       end
     end
   end

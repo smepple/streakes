@@ -1,9 +1,13 @@
-%h1= @goal.description
+%h1
+  %i.icon-leaf.medium
+  = @goal.description
 
 %p Targets are how you plan to get to your goal
 
 - if @goal.targets.any?
-  %h3= "You've added #{pluralize(@goal.targets.count, "target")}:"
+  %h3
+    %i.icon-screenshot.small
+    = "You've added #{pluralize(@goal.targets.count, "target")}:"
 
   %ul.targets
     - @goal.targets.each do |target|

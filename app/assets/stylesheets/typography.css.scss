@@ -2,6 +2,7 @@
 
 body {
   font-family: "Lato";
+  font-size: 21px;
   color: #333;
 }
 
@@ -17,10 +18,11 @@ li a {
 }
 
 .logo {
-  font-size: 4em;
+  font-size: 5em;
   font-weight: 300;
   font-variant: small-caps;
   line-height: 1em;
+  margin: 0 0 .4em 0;
 }
 
 h1, h2, h3, h4, h5, h6 {

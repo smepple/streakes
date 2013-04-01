@@ -1,11 +1,17 @@
-%h1= @target.description
+%h1
+  %i.icon-screenshot.medium
+  = @target.description
 
-%h3= link_to "Goal: #{@target.goal.description}", @target.goal
+%h3
+  %i.icon-leaf.small
+  = link_to @target.goal.description, @target.goal
 
 %p Events are things you've done to achieve your target
 
 - if @target.events.any?
-  %h3= "You've recorded #{pluralize(@target.events.count, "event")}:"
+  %h3
+    %i.icon-ok-circle.small
+    = "You've recorded #{pluralize(@target.events.count, "event")}:"
 
   %ul.events
     - @target.events.each do |event|
