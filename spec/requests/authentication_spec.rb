@@ -50,7 +50,7 @@ describe "Authentication" do
       describe "after successfully signing in" do
 
         specify "user should be taken to the user profile page" do
-          page.should have_content user.email
+          page.should have_link user.email
         end
 
         specify "signout link should be displayed in the header" do

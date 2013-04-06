@@ -1,3 +1,7 @@
-# Place all the behaviors and hooks related to the matching controller here.
-# All this logic will automatically be available in application.js.
-# You can use CoffeeScript in this file: http://jashkenas.github.com/coffee-script/
+jQuery ->
+
+  # Fade in pages
+  $(".container").delay(120).animate opacity: "1"
+
+  # Add focus to first input field on page load
+  $("input:visible:first").focus();

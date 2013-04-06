@@ -3,11 +3,10 @@
     = link_to "Streakes", root_path, class: "header-logo"
   .header-right
     - if signed_in?
-      = link_to root_path, class: "home" do
-        %i.icon-home.large
-      = current_user.email
-      = link_to signout_path, method: "delete", class: "sign-out", title: "Sign out" do
-        %i.icon-signout.large
+      / = link_to root_path, class: "home" do
+      /   %i.icon-home.large
+      / = current_user.email
+      = link_to "Home", root_path, title: current_user.email
+      = link_to "Sign out", signout_path, method: "delete"
     - else
-      = link_to signin_path, class: "sign-in", title: "Sign in" do
-        %i.icon-signin.large
+      = link_to "Sign in", signin_path

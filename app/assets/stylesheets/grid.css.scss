@@ -1,4 +1,5 @@
 .container {
+  opacity: 0;
   padding: 60px 15%;
   @include outer-container;
 }

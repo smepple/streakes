@@ -55,7 +55,7 @@ describe "Signup Flow" do
         before { click_button submit }
 
         specify "user should be taken to the user profile page" do
-          page.should have_content "user@example.com"
+          page.should have_link "user@example.com"
         end
       end
     end
