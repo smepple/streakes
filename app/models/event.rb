@@ -17,5 +17,5 @@ class Event < ActiveRecord::Base
 
   validates_presence_of :target_id, :description, :completed_at
 
-  default_scope order("completed_at ASC, created_at ASC")
+  default_scope order("completed_at DESC, created_at ASC")
 end
